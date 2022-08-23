@@ -1,0 +1,28 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+      <div ng-app="myApp" ng-controller="myCTRL">
+        <p> Type a letter in the input field :</p>
+        <p><input type ="text" ng-model="test"></p>
+        <ul>
+            <li ng-repeat="x in names | filter:test">
+                {{ x }}
+                </li>
+            </ul>
+        </div>
+        
+ <script>
+angular.module('myApp',[]).controller('myCTRL', function($scope){
+                $scope.names=[
+                'rohit',
+                'messi',
+                'ronaldo',
+                'neymar',
+                'mbappe',
+                'suarez',
+                ];
+            });
+        </script>
+        <p>the list will only consists of names matching the filter.</p>
+    </body>
+    </html>
